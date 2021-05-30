@@ -51,7 +51,7 @@ public class StatsService {
         }
         return countMounth;
     }
-    public long UnderAverage(long[] sales, long average) {
+    public long upperAverage(long[] sales, long average) {
         int countMounth = 0;
         for (long sale : sales) {
             if (average > sale)

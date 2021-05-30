@@ -53,12 +53,12 @@ public class StatsServiceTest {
     }
 
     @Test
-    void UnderAverage() {
+    void upperAverage() {
         StatsService service = new StatsService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         long average = (long) service.average(sales);
         long expected = 5;
-        long actual = service.belowAverage(sales, average);
+        long actual = service.upperAverage(sales, average);
         assertEquals(expected, actual);
     }
 }
