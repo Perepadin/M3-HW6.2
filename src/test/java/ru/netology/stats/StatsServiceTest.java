@@ -46,9 +46,8 @@ public class StatsServiceTest {
     void belowAverage() {
         StatsService service = new StatsService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        long average = (long) service.average(sales);
         long expected = 5;
-        long actual = service.belowAverage(sales, average);
+        long actual = service.belowAverage(sales);
         assertEquals(expected, actual);
     }
 
@@ -56,9 +55,8 @@ public class StatsServiceTest {
     void upperAverage() {
         StatsService service = new StatsService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        long average = (long) service.average(sales);
         long expected = 5;
-        long actual = service.upperAverage(sales, average);
+        long actual = service.upperAverage(sales);
         assertEquals(expected, actual);
     }
 }

@@ -10,10 +10,10 @@ public class StatsService {
     }
 
     public long minSales(long[] sales) {
-        long minMonth = 0;
-        long month = 0;
+        int minMonth = 0;
+        int month = 0;
         for (long sale : sales) {
-            if (sale <= sales[(int) minMonth]) {
+            if (sale <= sales[minMonth]) {
                 minMonth = month;
             }
             month = month + 1;
@@ -22,10 +22,10 @@ public class StatsService {
     }
 
     public long maxSales(long[] sales) {
-        long maxMonth = 0;
-        long month = 0;
+        int maxMonth = 0;
+        int month = 0;
         for (long sale : sales) {
-            if (sale >= sales[(int) maxMonth]) {
+            if (sale >= sales[maxMonth]) {
                 maxMonth = month;
             }
             month = month + 1;
@@ -35,29 +35,44 @@ public class StatsService {
 
     public double average(long[] sales) {
         long sum = 0;
+              for (long sale : sales) {
+            sum += sale;
+        }
         double average = 0;
         long length = sales.length;
-        for (long sale : sales) {
-            sum += sale;
-            average = sum / length;
-        }
+        average = sum / length;
         return average;
     }
-    public long belowAverage(long[] sales, long average) {
+
+    public long belowAverage(long[] sales) {
         int countMounth = 0;
+        long sum = 0;
+        for (long sale : sales) {
+            sum += sale;
+        }
+        double average = 0;
+        long length = sales.length;
+        average = sum / length;
         for (long sale : sales) {
             if (average < sale)
-            countMounth++;
+                countMounth++;
         }
         return countMounth;
     }
-    public long upperAverage(long[] sales, long average) {
+
+    public long upperAverage(long[] sales) {
         int countMounth = 0;
+        long sum = 0;
+        for (long sale : sales) {
+            sum += sale;
+        }
+        double average = 0;
+        long length = sales.length;
+        average = sum / length;
         for (long sale : sales) {
             if (average > sale)
                 countMounth++;
         }
         return countMounth;
     }
-
 }
