@@ -43,7 +43,6 @@ public class StatsService {
 
     public long belowAverage(long[] sales) {
         int countMounth = 0;
-        long sum = calculateSum(sales);
         double average = average(sales);
         for (long sale : sales) {
             if (average < sale)
@@ -54,7 +53,6 @@ public class StatsService {
 
     public long upperAverage(long[] sales) {
         int countMounth = 0;
-        long sum = calculateSum(sales);
         double average = average(sales);
         for (long sale : sales) {
             if (average > sale)
